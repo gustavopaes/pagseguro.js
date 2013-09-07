@@ -50,7 +50,7 @@ var _sender = {
   'areaCode': 11,
   'phone': '3030-3344',
   'document': '99999999999',
-  'born': 'dd/MM/yyyy'
+  'born': '01/02/1987'
 };
 
 compra.sender.set(_sender);
@@ -60,7 +60,7 @@ assert.equal( compra.sender._sender.senderEmail, _sender.email )
 assert.equal( compra.sender._sender.senderAreaCode, _sender.areaCode )
 assert.equal( compra.sender._sender.senderPhone, '30303344' )
 assert.equal( compra.sender._sender.senderCPF, _sender.document )
-assert.equal( compra.sender._sender.bornDate, _sender.born )
+assert.equal( compra.sender._sender.senderBornDate, _sender.born )
 
 
 var _shipping = {
