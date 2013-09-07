@@ -11,7 +11,7 @@
     "email": "gustavo.paes@gmail.com",
     "url": "https://github.com/gustavopaes/"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "request": "2.9.x",
     "xml2js": "0.2.x"
