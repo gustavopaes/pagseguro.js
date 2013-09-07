@@ -1,7 +1,7 @@
 {
   "name": "pagseguro.js",
   "description": "Integra a API de pagamentos online do Pagseguro",
-  "homepage": "https://github.com/cranic/node-pagseguro",
+  "homepage": "https://github.com/gustavopaes/pagseguro.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/gustavopaes/pagseguro.js.git"
@@ -11,7 +11,7 @@
     "email": "gustavo.paes@gmail.com",
     "url": "https://github.com/gustavopaes/"
   },
-  "version": "0.1.0-pre1",
+  "version": "0.1.0",
   "dependencies": {
     "request": "2.9.x",
     "xml2js": "0.2.x"
