@@ -2,13 +2,19 @@
 
 Lib NodeJS que integra o serviço de pagamentos online do PagSeguro.
 
+[![Build Status](https://travis-ci.org/gustavopaes/pagseguro.js.png?branch=master)](https://travis-ci.org/gustavopaes/pagseguro.js)
 
 ### Instalando
 
-A lib ainda não está no `npm`, por isso, para instalar, clone o repositório e use `npm install` para obter as dependências.
+Via linha de comando, use:
 
-    git clone git@github.com:gustavopaes/pagseguro.js.git
-    npm install
+    npm install pagseguro.js
+
+Você também pode adicionar como dependência em seu `package.json`:
+
+    "dependencies": {
+        "pagseguro.js": "*"
+    }
 
 ### Exemplos
 
