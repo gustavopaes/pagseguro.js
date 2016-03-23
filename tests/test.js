@@ -1,11 +1,10 @@
 var assert = require('assert');
 var pagseguro = require('../lib/pagseguro');
-
-var _seller = require('./token.json')
-
+var _seller = require('./token.json');
+var _transactions = require('./transactions.json');
 
 // Testa o preenchimento dos dados do vendedor
-var compra = pagseguro(_seller);
+var compra = pagseguro(_seller, 'test');
 assert.equal( compra.seller.name, _seller.name);
 assert.equal( compra.seller.email, _seller.email);
 assert.equal( compra.seller.token, _seller.token);
@@ -91,6 +90,7 @@ console.log("Testes de dados: OK");
 
 compra.checkout(function(err, res, body) {
   assert.strictEqual( !!err, false, err );
+  assert.strictEqual( res.statusCode, 200, res.statusCode );
   assert.strictEqual( !!body.errors, false, (function() {
     if(!!body.errors === true) {
       console.log('Erro no retorno da API. Mensagem retornada:');
@@ -100,4 +100,14 @@ compra.checkout(function(err, res, body) {
 
   console.log('Teste de envio de dados: OK');
   console.log( body );
+})
+
+_transactions.forEach(function(transaction) {
+  compra.transactions(transaction.code, function(err, res, result) {
+    assert.strictEqual( !!err, false, err );
+    assert.strictEqual( res.statusCode, 200, res.statusCode );
+
+    console.log('Teste de consulta: OK');
+    console.log( result );
+  })
 })

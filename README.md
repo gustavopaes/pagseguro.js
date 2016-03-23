@@ -84,6 +84,16 @@ Você também pode adicionar como dependência em seu `package.json`:
         res.redirect('https://pagseguro.uol.com.br/v2/checkout/payment.html?code=' + body.checkout.code);
       }
     });
+    });
+
+#### Efetuando a checagem de uma compra através do seu código
+
+    compra.transactions(codigo, function(err, res, body) {
+      if( !!err === false && !!body.errors === false ) {
+        // grava os dados no banco de dados
+        mongodb.save( body.transaction );
+      }
+    });
 
 ### Efetuando testes
 
