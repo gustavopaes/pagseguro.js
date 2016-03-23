@@ -20,7 +20,7 @@ Você também pode adicionar como dependência em seu `package.json`:
 
 #### Iniciando uma instância
 
-    var pagseguro = require('pagseguro');
+    var pagseguro = require('pagseguro' [, 'test']);
     
     // Ao iniciar a instância deve-se passar os dados do
     // vendedor para obter acesso à API.
