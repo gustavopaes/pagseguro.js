@@ -89,7 +89,7 @@ Você também pode adicionar como dependência em seu `package.json`:
 #### Efetuando a checagem de uma compra através do seu código
 
     compra.transactions(codigo, function(err, res, body) {
-      if( !!err === false && !!body.errors === false ) {
+      if( !!err === false && !!res.statusCode !== 404 ) {
         // grava os dados no banco de dados
         mongodb.save( body.transaction );
       }
