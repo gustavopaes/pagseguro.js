@@ -105,5 +105,14 @@ Para fazer os testes, edite o arquivo `tests/token.json` com as informações de
       'token': ''  // Token de segurança para usar a API
     }
 
+É necessário também editar o arquivo `tests/transactions.json` com as informações de transações válidas para consulta:
+
+    [
+        {
+            'code': '',  // código da transação
+        },
+        ...
+    ]
+
 Para validar o acesso, execute:
 `node tests/test.js`
