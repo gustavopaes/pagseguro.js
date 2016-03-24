@@ -1,9 +1,4 @@
 language: node_js
-before_script:
-  - "export PAGSEGURO_TEST=true"
-  - "export PAGSEGURO_EMAIL=gapaes@uol.com.br"
-  - "export PAGSEGURO_TOKEN=5982D67C6E55479787143CD84CE87E65"
-  - "export PAGSEGURO_CODES="
 node_js:
   - "5"
   - "5.1"
