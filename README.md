@@ -100,5 +100,5 @@ Você também pode adicionar como dependência em seu `package.json`:
 Para executar os testes, é necessário enviar via variável de ambiente o e-mail e o token de acesso à API do PagSeguro e 
 os códigos de transações, se necessário:
 
-`PAGSEGURO_TEST=true PAGSEGURO_EMAIL=XXXX@YYYY.COM PAGSEGURO_TOKEN=XXXXXXX npm test`
-`PAGSEGURO_TEST=true PAGSEGURO_CODES=123,456,789 PAGSEGURO_EMAIL=XXXX@YYYY.COM PAGSEGURO_TOKEN=XXXXXXX npm test`
+    PAGSEGURO_TEST=true PAGSEGURO_EMAIL=XXXX@YYYY.COM PAGSEGURO_TOKEN=XXXXXXX npm test
+    PAGSEGURO_TEST=true PAGSEGURO_CODES=123,456,789 PAGSEGURO_EMAIL=XXXX@YYYY.COM PAGSEGURO_TOKEN=XXXXXXX npm test
