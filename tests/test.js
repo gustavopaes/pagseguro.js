@@ -1,6 +1,6 @@
 var assert = require('assert');
 var pagseguro = require('../lib/pagseguro');
-
+var _transactions = process.env.PAGSEGURO_CODES && process.env.PAGSEGURO_CODES.split(',') || [];
 var _seller = {
   'name' : 'loja teste pagseguro.js',
   'email': process.env.PAGSEGURO_EMAIL,
@@ -90,8 +90,6 @@ assert.equal( compra.shipping._shipping.shippingAddressStreet, _shipping.street 
 assert.equal( compra.shipping._shipping.shippingAddressNumber, _shipping.number )
 assert.equal( compra.shipping._shipping.shippingAddressComplement, _shipping.complement )
 
-console.log("Testes de dados: OK");
-
 compra.checkout(function(err, res, body) {
   assert.strictEqual( !!err, false, err );
   assert.strictEqual( typeof body, 'object', 'Retorno deve ser objeto, veio: ' + body);
@@ -99,9 +97,15 @@ compra.checkout(function(err, res, body) {
     if(!!body.errors === true) {
       console.log('Erro no retorno da API. Mensagem retornada:');
       console.log(body.errors);
+      process.exit(1);
     }
   }()));
+  assert.strictEqual( res.statusCode, 200, res.statusCode );
+})
 
-  console.log('Teste de envio de dados: OK');
-  console.log( body );
+_transactions.forEach(function(transaction) {
+  compra.transactions(transaction, function(err, res, result) {
+    assert.strictEqual( !!err, false, err );
+    assert.strictEqual( res.statusCode, 200, res.statusCode );
+  })
 })

@@ -20,7 +20,7 @@ Você também pode adicionar como dependência em seu `package.json`:
 
 #### Iniciando uma instância
 
-    var pagseguro = require('pagseguro');
+    var pagseguro = require('pagseguro' [, 'test']);
     
     // Ao iniciar a instância deve-se passar os dados do
     // vendedor para obter acesso à API.
@@ -84,9 +84,29 @@ Você também pode adicionar como dependência em seu `package.json`:
         res.redirect('https://pagseguro.uol.com.br/v2/checkout/payment.html?code=' + body.checkout.code);
       }
     });
+    });
+
+#### Efetuando a checagem de uma compra através do seu código
+
+    compra.transactions(codigo, function(err, res, body) {
+      if( !!err === false && !!res.statusCode !== 404 ) {
+        // grava os dados no banco de dados
+        mongodb.save( body.transaction );
+      }
+    });
 
 ### Efetuando testes
 
 Para executar os testes, é necessário enviar via variável de ambiente o e-mail e o token de acesso à API do PagSeguro:
 
 `PAGSEGURO_EMAIL=XXXX@YYYY.COM PAGSEGURO_TOKEN=XXXXXXX npm test`
+
+É necessário também editar o arquivo `tests/transactions.json` com as informações de transações válidas para consulta:
+
+    [
+        {
+            'code': '',  // código da transação
+        },
+        ...
+    ]
+
