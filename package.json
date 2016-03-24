@@ -1,5 +1,6 @@
 {
   "name": "pagseguro.js",
+  "version": "0.2.0",
   "description": "Integra a API de pagamentos online do Pagseguro",
   "homepage": "https://github.com/gustavopaes/pagseguro.js",
   "repository": {
@@ -11,7 +12,6 @@
     "email": "gustavo.paes@gmail.com",
     "url": "https://github.com/gustavopaes/"
   },
-  "version": "0.1.2",
   "dependencies": {
     "request": "2.69.x",
     "xml2js": "0.4.x"
