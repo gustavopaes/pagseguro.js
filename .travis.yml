@@ -1,4 +1,15 @@
 language: node_js
+before_script:
+  - "export PAGSEGURO_EMAIL=gapaes@uol.com.br"
+  - "export PAGSEGURO_TOKEN=1234567890"
 node_js:
+  - "5"
+  - "5.1"
+  - "4"
+  - "4.2"
+  - "4.1"
+  - "4.0"
+  - "0.12"
   - "0.11"
   - "0.10"
+  - "iojs"

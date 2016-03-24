@@ -1,8 +1,11 @@
 var assert = require('assert');
 var pagseguro = require('../lib/pagseguro');
 
-var _seller = require('./token.json')
-
+var _seller = {
+  'name' : 'loja teste pagseguro.js',
+  'email': process.env.PAGSEGURO_EMAIL,
+  'token': process.env.PAGSEGURO_TOKEN
+};
 
 // Testa o preenchimento dos dados do vendedor
 var compra = pagseguro(_seller);
@@ -91,6 +94,7 @@ console.log("Testes de dados: OK");
 
 compra.checkout(function(err, res, body) {
   assert.strictEqual( !!err, false, err );
+  assert.strictEqual( typeof body, 'object', 'Retorno deve ser objeto, veio: ' + body);
   assert.strictEqual( !!body.errors, false, (function() {
     if(!!body.errors === true) {
       console.log('Erro no retorno da API. Mensagem retornada:');

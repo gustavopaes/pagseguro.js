@@ -87,13 +87,6 @@ Você também pode adicionar como dependência em seu `package.json`:
 
 ### Efetuando testes
 
-Para fazer os testes, edite o arquivo `tests/token.json` com as informações de acesso ao PagSeguro:
+Para executar os testes, é necessário enviar via variável de ambiente o e-mail e o token de acesso à API do PagSeguro:
 
-    {
-      'name': '',  // Nome da loja (opcional)
-      'email': '', // Seu e-mail de acesso ao PagSeguro
-      'token': ''  // Token de segurança para usar a API
-    }
-
-Para validar o acesso, execute:
-`node tests/test.js`
+`PAGSEGURO_EMAIL=XXXX@YYYY.COM PAGSEGURO_TOKEN=XXXXXXX npm test`
