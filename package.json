@@ -13,7 +13,7 @@
     "url": "https://github.com/gustavopaes/"
   },
   "dependencies": {
-    "request": "2.69.x",
+    "request": "2.82.0",
     "xml2js": "0.4.x"
   },
   "scripts": {
